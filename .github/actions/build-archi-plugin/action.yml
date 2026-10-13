@@ -67,7 +67,7 @@ runs:
         cache: maven
     - name: Build
       shell: bash
-      run: mvn -B -q clean -DskipTests verify
+      run: mvn -B -X clean -DskipTests verify
     - name: Package plugin
       shell: bash
       run: |
