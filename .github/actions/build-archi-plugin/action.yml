@@ -72,7 +72,7 @@ runs:
         echo "$HOME/apache-maven-3.9.11/bin" >> $GITHUB_PATH
     - name: Build
       shell: bash
-      run: mvn -B -X clean -DskipTests verify
+      run: mvn -B -q clean -DskipTests verify
     - name: Package plugin
       shell: bash
       run: |
