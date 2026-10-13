@@ -65,6 +65,11 @@ runs:
         distribution: temurin
         java-version: ${{ env.JAVA_VERSION }}
         cache: maven
+    - name: Use Maven 3.9.11
+      shell: bash
+      run: |
+        curl -fsSL https://archive.apache.org/dist/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz | tar xz -C $HOME
+        echo "$HOME/apache-maven-3.9.11/bin" >> $GITHUB_PATH
     - name: Build
       shell: bash
       run: mvn -B -X clean -DskipTests verify
